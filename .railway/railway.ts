@@ -5,7 +5,7 @@ import { defineRailway, github, project, service } from "railway/iac";
 export const partial = "GGRealm";
 export default defineRailway(() => {
   const GGRealm = service("GGRealm", {
-    source: github("Bwalker01/GGRealm", { branch: "main", checkSuites: false }),
+    source: github("Bwalker01/GGRealm", { branch: "main", checkSuites: true }),
     build: { buildCommand: "npm run build", buildEnvironment: "V3", builder: "RAILPACK", watchPatterns: ["src/**", "package.json", "package-lock.json", "tsconfig.json", ".railway/**"] },
     start: "node dist/server.js",
     healthcheck: "/health",

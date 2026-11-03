@@ -1,0 +1,9 @@
+{
+  // Type-checks the tests alongside src without emitting; tests run through tsx.
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "..",
+    "noEmit": true
+  },
+  "include": ["../src", "."]
+}
