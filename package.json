@@ -5,11 +5,13 @@
   "description": "",
   "main": "dist/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node --import tsx --test \"test/**/*.test.ts\"",
     "build": "tsc -p tsconfig.json",
     "run": "node dist/server.js",
     "start": "npm run build && npm run run",
-    "dev": "tsx watch --env-file-if-exists=.env src/server.ts"
+    "dev": "tsx watch --env-file-if-exists=.env src/server.ts",
+    "lint": "oxlint --deny-warnings",
+    "typecheck": "tsc -p test"
   },
   "repository": {
     "type": "git",
@@ -27,12 +29,10 @@
   },
   "devDependencies": {
     "@types/node": "^26.6.5",
-    "eslint": "^10.14.0",
+    "oxlint": "^1.91.0",
     "prettier": "^3.9.10",
     "railway": "^3.16.0",
+    "tsx": "^4.23.15",
     "typescript": "^7.0.2"
-  },
-  "overrides": {
-    "minimatch": "^11.0.1"
   }
 }
