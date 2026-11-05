@@ -11,7 +11,8 @@
     "start": "npm run build && npm run run",
     "dev": "tsx watch --env-file-if-exists=.env src/server.ts",
     "lint": "oxlint --deny-warnings",
-    "typecheck": "tsc -p test"
+    "typecheck": "tsc -p test",
+    "contract:emit": "prisma contract emit"
   },
   "repository": {
     "type": "git",
@@ -25,14 +26,17 @@
   },
   "homepage": "https://github.com/Bwalker01/GGRealm#readme",
   "dependencies": {
+    "@prisma/orm-postgres": "^8.0.0-rc.22",
+    "dotenv": "^18.0.9",
     "fastify": "^5.12.7"
   },
   "devDependencies": {
+    "@prisma/cli-engine": "^0.9.0",
     "@types/node": "^26.6.5",
     "oxlint": "^1.91.0",
     "prettier": "^3.9.10",
+    "prisma": "^8.0.0-rc.30",
     "railway": "^3.16.0",
-    "tsx": "^4.23.15",
     "typescript": "^7.0.2"
   }
 }
